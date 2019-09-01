@@ -16,7 +16,7 @@ title: "Automapics"
     <h1>{{ title }}</h1>
 
     {%- for item in pagination.items %}
-      <img src="{{ item.image_path }}">{{ item.image_path }}</li>
+      <img src="./{{ item.image_path }}">{{ item.image_path }}</li>
     {% endfor -%}
   </body>
 </html>

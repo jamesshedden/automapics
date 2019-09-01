@@ -2,16 +2,19 @@
 pagination:
   data: test
   size: 1
+title: "Automapics"
 ---
 
 <!doctype html>
 
 <html>
   <head>
-    <title>Automapics</title>
+    <title>{{ title }}</title>
   </head>
 
   <body>
+    <h1>{{ title }}</h1>
+
     <p>{{ pagination.items }}</p>
   </body>
 </html>

@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - 12
-script: node_modules/.bin/eleventy --formats=html
+script: node_modules/.bin/eleventy
 deploy:
   provider: pages
   skip_cleanup: true

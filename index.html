@@ -3,6 +3,7 @@ pagination:
   data: posts
   size: 1
 title: "Automapics"
+site_url: "https://jamesshedden.github.io/automapics"
 ---
 
 <!doctype html>
@@ -16,7 +17,7 @@ title: "Automapics"
     <h1>{{ title }}</h1>
 
     {%- for item in pagination.items %}
-      <img src="./{{ item.image_path }}">{{ item.image_path }}</li>
+      <img src="{{ site_url }}/img/{{ item.image_path }}">{{ item.image_path }}</li>
     {% endfor -%}
   </body>
 </html>

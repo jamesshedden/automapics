@@ -17,7 +17,7 @@ site_url: "https://jamesshedden.github.io/automapics"
     <h1>{{ title }}</h1>
 
     {%- for item in pagination.items %}
-      <img src="{{ site_url }}/img/{{ item.image_path }}">{{ item.image_path }}</li>
+      <img src="{{ site_url }}/img/{{ item.filename }}">{{ item.filename }}</li>
     {% endfor -%}
   </body>
 </html>

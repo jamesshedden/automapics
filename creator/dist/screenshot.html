@@ -1,0 +1,18 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title></title>
+    </head>
+
+    <body style="margin: 0; padding: 0">
+        <img id="image" src="./temp_screenshot.png">
+
+        <script type="text/javascript">
+            const urlParams = new URLSearchParams(window.location.search);
+            const transforms = urlParams.get('transforms')
+            const image = document.getElementById('image')
+            image.style.transform = transforms
+        </script>
+    </body>
+</html>

@@ -7,6 +7,21 @@
   "dependencies": {
     "@11ty/eleventy": "^0.9.0",
     "@babel/core": "^7.5.5",
-    "@babel/node": "^7.5.5"
+    "@babel/node": "^7.5.5",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "node-fetch": "^2.6.0",
+    "puppeteer": "^1.19.0"
+  },
+  "devDependencies": {
+    "chromedriver": "^76.0.1",
+    "express": "^4.17.1",
+    "html2canvas": "^1.0.0-rc.3",
+    "selenium-webdriver": "^4.0.0-alpha.4",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  },
+  "scripts": {
+    "creator": "npx webpack --config creator/webpack.config.js && node creator/scripts/serve.js"
   }
 }

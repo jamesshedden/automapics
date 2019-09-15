@@ -1,3 +1,5 @@
 node_modules
 _site/
 .env
+creator/dist/temp_screenshot.png
+creator/dist/script.js

@@ -1,6 +1,6 @@
 const fetch = require('node-fetch')
 
-const id = Date.now().toString()
+const getId = () => Date.now().toString()
 
 const headers = {
     'Authorization': `token ${process.env.GITHUB_TOKEN}`
@@ -96,16 +96,13 @@ async function createCommit(body) {
     })
 }
 
-async function createBranch(shaToBranchFrom) {
+async function createBranch(body) {
     return fetch(
         `${GITHUB_API_URL}/repos/${OWNER}/${REPO}/git/refs`,
         {
             method: 'post',
             headers: headers,
-            body: JSON.stringify({
-                ref: `refs/heads/new-image-${id}`,
-                sha: shaToBranchFrom
-            })
+            body: JSON.stringify(body)
         }
     ).then(response => response.json()).then(data => {
         return { ref: data.ref }
@@ -135,12 +132,20 @@ async function createPullRequest(body) {
 }
 
 async function submitImageToGitHub(req, res) {
+    const id = getId()
+
     const headReference = await getHeadReference()
-    const branch = await createBranch(headReference.sha)
+
+    const branch = await createBranch({
+        ref: `refs/heads/new-image-${id}`,
+        sha: headReference.sha,
+    })
+
     const commit = await getCommit(headReference.url)
 
     const imageBlob = await createImageBlob(req.body.image)
     const date = new Date
+
 
     const JSONBlob = await createJSONBlob({
         filename: `${id}.png`,

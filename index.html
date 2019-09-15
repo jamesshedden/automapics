@@ -11,13 +11,21 @@ site_url: "https://jamesshedden.github.io/automapics"
 <html>
   <head>
     <title>{{ title }}</title>
+
+    <style type="text/css">
+      .image {
+        width: 300px;
+        height: auto;
+        border-radius: 30px;
+      }
+    </style>
   </head>
 
   <body>
     <h1>{{ title }}</h1>
 
     {%- for item in pagination.items %}
-      <img src="{{ site_url }}/img/{{ item.filename }}">{{ item.filename }}</li>
+      <img class="image" src="{{ site_url }}/img/{{ item.filename }}">
     {% endfor -%}
   </body>
 </html>

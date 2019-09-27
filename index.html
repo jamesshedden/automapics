@@ -1,7 +1,7 @@
 ---
 pagination:
   data: posts
-  size: 20
+  size: 1
 title: "Automapics"
 site_url: "https://jamesshedden.github.io/automapics"
 phone_time: "10:42"
@@ -17,6 +17,47 @@ phone_date: "Friday, September 27"
     <style type="text/css">
       body {
         font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 24px;
+        line-height: 1.2;
+        margin: 50px 26px 13px;
+        color: #333333;
+      }
+
+      h1 a:link, h1 a:visited, h1 a:hover, h1 a:active {
+        color: #333333;
+      }
+
+      h2 {
+        font-size: 14px;
+        font-weight: 200;
+        color: #8D8D8D;
+        margin: 0 26px 24px;
+      }
+
+      h2 a:link, h2 a:visited, h2 a:hover, h2 a:active {
+        color: #8D8D8D;
+      }
+
+      .nav-links {
+        margin: 26px 26px 50px;
+      }
+
+      .nav-link {
+        font-size: 14px;
+        font-weight: 200;
+        color: #8D8D8D;
+      }
+
+      .nav-link:first-child {
+        margin-right: 10px;
+      }
+
+      .nav-link a:link, .nav-link a:visited, .nav-link a:hover, .nav-link a:active {
+        color: #8D8D8D;
       }
 
       .image {
@@ -34,6 +75,13 @@ phone_date: "Friday, September 27"
         text-align: center;
         color: white;
         position: relative;
+        text-decoration: none;
+        background-size: auto 100%;
+        transition: all ease 200ms;
+      }
+
+      .phone:hover {
+        background-size: auto 105%;
       }
 
       .phones {
@@ -61,9 +109,18 @@ phone_date: "Friday, September 27"
         left: 50%;
         transform: translateX(-50%);
         bottom: -25px;
-        display: block;
         border-radius: 50%;
         box-shadow: rgba(0,0,0,0.24) 0 2px 9px;
+      }
+
+      .download-icon {
+        opacity: 0.5;
+        margin-top: 14px;
+        transition: all ease 200ms;
+      }
+
+      .phone:hover .download-icon {
+        opacity: 1;
       }
 
       @media (min-width: 600px) {
@@ -81,24 +138,41 @@ phone_date: "Friday, September 27"
   </head>
 
   <body>
-    <h1>{{ title }}</h1>
-
     <div class="phones">
+      <h1>Phone backgrounds<br>made by <a href="https://twitter.com/dots__bot">a bot.</a></h1>
+      <h2>A thing by <a href="https://james.sh">James Shedden</a>.</h2>
+
       {%- for item in pagination.items %}
-        <div class="phone" style="
+        <a class="phone"
+        href="{{ site_url }}/img/{{ item.filename }}"
+        style="
           background-image: url({{ site_url }}/img/{{ item.filename }});
-          background-repeat: none;
-          background-size: auto 100%;
+          background-repeat: no-repeat;
           background-position: 50% 50%;
         ">
           <div class="phone__time">{{ phone_time }}</div>
           <div class="phone__date">{{ phone_date }}</div>
-          <a href="{{ site_url }}/img/{{ item.filename }}"
-          class="phone__download">
-            <img src="/img/download.svg">
-          </a>
-        </div>
+          <div class="phone__download">
+            <img class="download-icon" src="{{ site_url }}/img/download.svg">
+          </div>
+        </a>
       {% endfor -%}
+
+      {% if pagination.nextPageHref or pagination.previousPageHref %}
+        <div class="nav-links">
+          {% if pagination.previousPageHref %}
+            <a class="nav-link" href="{{ site_url }}{{ pagination.previousPageHref }}">
+              &larr; Previous page
+            </a>
+          {% endif -%}
+
+          {% if pagination.nextPageHref %}
+            <a class="nav-link" href="{{ site_url }}{{ pagination.nextPageHref }}">
+              Next page &rarr;
+            </a>
+          {% endif -%}
+        </div>
+      {% endif -%}
     </div>
   </body>
 </html>

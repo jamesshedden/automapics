@@ -4,7 +4,7 @@ pagination:
   size: 12
   reverse: true
 title: "dotsbot.pictures"
-site_url: "https://jamesshedden.github.io/automapics"
+site_url: "https://dotsbot.pictures"
 phone_time: "10:42"
 phone_date: "Friday, September 27"
 ---
@@ -16,17 +16,17 @@ phone_date: "Friday, September 27"
     <title>{{ title }}</title>
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="shortcut icon" href="https://dotsbot.pictures/img/favicon.png">
+    <link rel="shortcut icon" href="{{ site_url }}/img/favicon.png">
     <meta name="description" content="Phone backgrounds made by a bot.">
     <meta name="keywords" content="art, shapes, colours, generative, bot" />
-    <meta property="og:title" content="dotsbot.pictures" />
-    <meta property="og:url" content="https://dotsbot.pictures" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:url" content="{{ site_url }}" />
     <meta property="og:description" content="Phone backgrounds made by a bot." />
-    <meta property="og:image" content="https://dotsbot.pictures/img/og_full.jpg" />
+    <meta property="og:image" content="{{ site_url }}/img/og_full.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="dotsbot.pictures" />
+    <meta name="twitter:title" content="{{ title }}" />
     <meta name="twitter:description" content="Phone backgrounds made by a bot." />
-    <meta name="twitter:image:src" content="https://dotsbot.pictures/img/og_full.jpg" />
+    <meta name="twitter:image:src" content="{{ site_url }}/img/og_full.jpg" />
     <!-- <meta name="google-site-verification" content="D4dmTFhetoHw4OhGkPQcGNQCicdmEiKBIUUu4tJc1vQ" /> -->
 
     <style type="text/css">

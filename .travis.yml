@@ -8,5 +8,6 @@ deploy:
   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
   local-dir: _site
+  fqdn: dotsbot.pictures
   on:
     branch: master

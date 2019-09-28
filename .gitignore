@@ -3,3 +3,4 @@ _site/
 .env
 creator/dist/temp_screenshot.png
 creator/dist/script.js
+**/.DS_Store

@@ -18,10 +18,12 @@
     "express": "^4.17.1",
     "html2canvas": "^1.0.0-rc.3",
     "selenium-webdriver": "^4.0.0-alpha.4",
+    "sharp": "^0.23.1",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7"
   },
   "scripts": {
+    "serve": "npx babel-node script/compile-site-data.js && npx babel-node script/generate-preview-images.js && node_modules/.bin/eleventy && node script/serve.js",
     "creator": "npx webpack --config creator/webpack.config.js && node creator/scripts/serve.js"
   }
 }

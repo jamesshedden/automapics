@@ -148,7 +148,7 @@ async function submitImageToGitHub(req, res) {
 
 
     const JSONBlob = await createJSONBlob({
-        filename: `${id}.png`,
+        id,
         created_at: date.toUTCString(),
     })
 
@@ -156,7 +156,7 @@ async function submitImageToGitHub(req, res) {
         commit.treeSha,
         [
             {
-                path: `img/${id}.png`,
+                path: `img/backgrounds/${id}.png`,
                 mode: '100644',
                 type: 'blob',
                 sha: imageBlob.sha

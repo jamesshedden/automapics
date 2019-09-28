@@ -161,16 +161,16 @@ phone_date: "Friday, September 27"
 
       {%- for item in pagination.items %}
         <a class="phone"
-        href="{{ site_url }}/img/{{ item.filename }}"
+        href="/img/backgrounds/{{ item.id }}.png"
         style="
-          background-image: url({{ site_url }}/img/{{ item.filename }});
+          background-image: url('/img/previews/{{ item.id }}.jpg');
           background-repeat: no-repeat;
           background-position: 50% 50%;
         ">
           <div class="phone__time">{{ phone_time }}</div>
           <div class="phone__date">{{ phone_date }}</div>
           <div class="phone__download">
-            <img class="download-icon" src="{{ site_url }}/img/download.svg">
+            <img class="download-icon" src="/img/download.svg">
           </div>
         </a>
       {% endfor -%}

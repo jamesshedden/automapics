@@ -23,7 +23,8 @@
     "webpack-cli": "^3.3.7"
   },
   "scripts": {
-    "serve": "npx babel-node script/compile-site-data.js && npx babel-node script/generate-preview-images.js && node_modules/.bin/eleventy && node script/serve.js",
+    "build": "npx babel-node script/compile-site-data.js && npx babel-node script/generate-preview-images.js && node_modules/.bin/eleventy",
+    "serve": "yarn build && node script/serve.js",
     "creator": "npx webpack --config creator/webpack.config.js && node creator/scripts/serve.js"
   }
 }

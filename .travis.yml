@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - 12
-script: npx babel-node script/compile-site-data.js && node_modules/.bin/eleventy
+script: yarn build
 deploy:
   provider: pages
   skip_cleanup: true

@@ -60,12 +60,13 @@ phone_date: "Friday, September 27"
 
       .nav-links {
         margin: 26px 26px 0px;
+        text-align: center;
       }
 
       .nav-link {
         font-size: 14px;
         font-weight: 200;
-        color: #8D8D8D;
+        color: #333333;
       }
 
       .nav-link:first-child {
@@ -73,7 +74,7 @@ phone_date: "Friday, September 27"
       }
 
       .nav-link a:link, .nav-link a:visited, .nav-link a:hover, .nav-link a:active {
-        color: #8D8D8D;
+        color: #333333;
       }
 
       .image {
@@ -178,13 +179,13 @@ phone_date: "Friday, September 27"
       {% if pagination.nextPageHref or pagination.previousPageHref %}
         <div class="nav-links">
           {% if pagination.previousPageHref %}
-            <a class="nav-link" href="{{ site_url }}{{ pagination.previousPageHref }}">
+            <a class="nav-link" href="{{ pagination.previousPageHref }}">
               &larr; Previous page
             </a>
           {% endif -%}
 
           {% if pagination.nextPageHref %}
-            <a class="nav-link" href="{{ site_url }}{{ pagination.nextPageHref }}">
+            <a class="nav-link" href="{{ pagination.nextPageHref }}">
               Next page &rarr;
             </a>
           {% endif -%}

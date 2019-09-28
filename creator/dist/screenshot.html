@@ -11,8 +11,11 @@
         <script type="text/javascript">
             const urlParams = new URLSearchParams(window.location.search);
             const transforms = urlParams.get('transforms')
+            const hue = urlParams.get('hue')
+            const saturate = urlParams.get('saturate')
             const image = document.getElementById('image')
             image.style.transform = transforms
+            image.style.filter = `hue-rotate(${ hue }deg) saturate(${ saturate }%)`
         </script>
     </body>
 </html>

@@ -10,6 +10,8 @@ const imageCropPreviewElement = document.getElementById('image-crop-preview')
 const xPositionRangeElement = document.getElementById('x-position-range');
 const yPositionRangeElement = document.getElementById('y-position-range');
 const scaleRangeElement = document.getElementById('scale-range');
+const hueRangeElement = document.getElementById('hue-range');
+const saturateRangeElement = document.getElementById('saturate-range');
 const topLeftXCoordinateElement = document.getElementById('top-left-x-coordinate-text')
 const topLeftYCoordinateElement = document.getElementById('top-left-y-coordinate-text')
 const widthElement = document.getElementById('width-text')
@@ -21,8 +23,8 @@ const FRAME_WIDTH = 300
 const FRAME_HEIGHT = 533
 const MIN_SCALE = 29.6
 
-const croppedImageUrl = (transforms) => {
-    return `http://localhost:3000/screenshot.html?transforms=${transforms}`;
+const croppedImageUrl = (transforms, hue, saturate) => {
+    return `http://localhost:3000/screenshot.html?transforms=${transforms}&hue=${hue}&saturate=${saturate}`;
 }
 
 const imageUrl = () => {
@@ -55,6 +57,9 @@ let transformState = {
     horizontalFlip: false,
     rotationDegrees: 0,
 }
+
+let hue = 0
+let saturate = 0
 
 const rotations = [0, 90, 180, 270]
 
@@ -93,7 +98,7 @@ saveButton.addEventListener('click', () => {
     let { x, y, width, height } = getScreenshotParameters()
 
     let body = {
-        url: croppedImageUrl(getTransformProperties()),
+        url: croppedImageUrl(getTransformProperties(), hue, saturate),
         x,
         y,
         width,
@@ -174,4 +179,14 @@ scaleRangeElement.addEventListener('input', () => {
     setPosition(setXPosition, formatXPosition, getXPosition());
     setPosition(setYPosition, formatYPosition, getYPosition());
     setImageDimensions(getScaledImageWidth(IMAGE_WIDTH));
+});
+
+hueRangeElement.addEventListener('input', (event) => {
+    imageContainer.style.filter = `hue-rotate(${event.target.value}deg) saturate(${saturate}%)`
+    hue = event.target.value
+});
+
+saturateRangeElement.addEventListener('input', (event) => {
+    imageContainer.style.filter = `hue-rotate(${hue}deg) saturate(${event.target.value}%)`
+    saturate = event.target.value
 });

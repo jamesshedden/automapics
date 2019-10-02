@@ -149,6 +149,7 @@
       <h1>Phone backgrounds<br>made by a bot.</h1>
       <h2>Images made by <a href="https://twitter.com/dots__bot">Dots Bot</a>.<br>A thing by <a href="https://james.sh">James Shedden</a>.</h2>
         <a class="phone"
+        id="1569621506082"
         href="/img/backgrounds/1569621506082.png"
         style="
           background-image: url('/img/previews/1569621506082.jpg');
@@ -163,6 +164,7 @@
         </a>
       
         <a class="phone"
+        id="1569621121906"
         href="/img/backgrounds/1569621121906.png"
         style="
           background-image: url('/img/previews/1569621121906.jpg');
@@ -177,6 +179,7 @@
         </a>
       
         <a class="phone"
+        id="1569620789664"
         href="/img/backgrounds/1569620789664.png"
         style="
           background-image: url('/img/previews/1569620789664.jpg');
@@ -191,6 +194,7 @@
         </a>
       
         <a class="phone"
+        id="1569620730456"
         href="/img/backgrounds/1569620730456.png"
         style="
           background-image: url('/img/previews/1569620730456.jpg');
@@ -205,6 +209,7 @@
         </a>
       
         <a class="phone"
+        id="1569620666013"
         href="/img/backgrounds/1569620666013.png"
         style="
           background-image: url('/img/previews/1569620666013.jpg');
@@ -219,6 +224,7 @@
         </a>
       
         <a class="phone"
+        id="1569620407295"
         href="/img/backgrounds/1569620407295.png"
         style="
           background-image: url('/img/previews/1569620407295.jpg');
@@ -233,6 +239,7 @@
         </a>
       
         <a class="phone"
+        id="1569620183012"
         href="/img/backgrounds/1569620183012.png"
         style="
           background-image: url('/img/previews/1569620183012.jpg');
@@ -247,6 +254,7 @@
         </a>
       
         <a class="phone"
+        id="1569619776645"
         href="/img/backgrounds/1569619776645.png"
         style="
           background-image: url('/img/previews/1569619776645.jpg');
@@ -261,6 +269,7 @@
         </a>
       
         <a class="phone"
+        id="1568588099592"
         href="/img/backgrounds/1568588099592.png"
         style="
           background-image: url('/img/previews/1568588099592.jpg');
@@ -275,6 +284,7 @@
         </a>
       
         <a class="phone"
+        id="1568586732367"
         href="/img/backgrounds/1568586732367.png"
         style="
           background-image: url('/img/previews/1568586732367.jpg');
@@ -289,6 +299,7 @@
         </a>
       
         <a class="phone"
+        id="1568586640989"
         href="/img/backgrounds/1568586640989.png"
         style="
           background-image: url('/img/previews/1568586640989.jpg');
@@ -303,6 +314,7 @@
         </a>
       
         <a class="phone"
+        id="1568585201366"
         href="/img/backgrounds/1568585201366.png"
         style="
           background-image: url('/img/previews/1568585201366.jpg');
@@ -324,14 +336,20 @@
           </div>
       </div>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18115176-7"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject'] = r;i[r]=i[r]||function(){
+        (i[r].q = i[r].q || []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      gtag('config', 'UA-18115176-7');
+      ga('create', 'UA-18115176-7', 'auto');
+      ga('send', 'pageview');
+
+      document.querySelectorAll('.phone').forEach(function (element) {
+        element.addEventListener('click', function (event) {
+          ga('send', 'pageview', 'ga/event/background/' + element.id);
+        });
+      });
     </script>
   </body>
 </html>

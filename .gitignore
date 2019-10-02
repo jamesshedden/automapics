@@ -1,6 +1,8 @@
 node_modules
+_data/
 _site/
 .env
 creator/dist/temp_screenshot.png
 creator/dist/script.js
+img/previews
 **/.DS_Store

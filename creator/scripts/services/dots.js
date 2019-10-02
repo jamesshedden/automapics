@@ -22,10 +22,12 @@ function getDotsImage(res) {
         browser.newPage().then(page => {
             page.goto('https://jamesshedden.github.io/coloured-circles/')
                 .then(() => {
-                    page.screenshot({ path: screenshotImagePath }).then(() => {
-                        browser.close()
-                        return res.send()
-                    })
+                    setTimeout(() => {
+                        page.screenshot({ path: screenshotImagePath }).then(() => {
+                            browser.close()
+                            return res.send()
+                        })
+                    }, 2000)
                 })
         })
     })

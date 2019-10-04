@@ -58,8 +58,8 @@ let transformState = {
     rotationDegrees: 0,
 }
 
-let hue = 0
-let saturate = 0
+let hue = hueRangeElement.value
+let saturate = saturateRangeElement.value
 
 const rotations = [0, 90, 180, 270]
 

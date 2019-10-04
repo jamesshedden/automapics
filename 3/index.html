@@ -27,7 +27,7 @@
       h1 {
         font-size: 24px;
         line-height: 1.2;
-        margin: 50px 26px 13px;
+        margin-bottom: 13px;
         color: #333333;
       }
 
@@ -39,12 +39,28 @@
         font-size: 14px;
         font-weight: 200;
         color: #8D8D8D;
-        margin: 0 26px 24px;
+        margin-bottom: 13px;
         line-height: 1.5;
       }
 
       h2 a:link, h2 a:visited, h2 a:hover, h2 a:active {
         color: #8D8D8D;
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 200;
+        color: #333333;
+        line-height: 1.5;
+        width: 230px;
+      }
+
+      p a:link, p a:visited, p a:hover, p a:active {
+        color: #333333;
+      }
+
+      .header {
+        margin: 50px 26px 24px;
       }
 
       .nav-links {
@@ -140,14 +156,36 @@
         .phones {
           width: 848px;
         }
+
+        .header {
+          margin: 0;
+        }
+
+        .header-item {
+          display: inline-block;
+          width: 230px;
+          margin: 25px;
+          vertical-align: middle;
+        }
       }
     </style>
   </head>
 
   <body>
     <div class="phones">
-      <h1>Phone backgrounds<br>made by a bot.</h1>
-      <h2>Images made by <a href="https://twitter.com/dots__bot">Dots Bot</a>.<br>A thing by <a href="https://james.sh">James Shedden</a>.</h2>
+      <div class="header">
+        <div class="header-item">
+          <h1>Phone backgrounds<br>made by a bot.</h1>
+        </div>
+
+        <div class="header-item">
+          <h2>Images made by <a href="https://twitter.com/dots__bot">Dots Bot</a>.<br>A thing by <a href="https://james.sh">James Shedden</a>.</h2>
+        </div>
+
+        <div class="header-item">
+          <p><a href="http://eepurl.com/gFkenj" target="_blank" rel="noopener noreferrer">Sign up to the mailing list</a> to receive new backgrounds straight to your inbox.</p>
+        </div>
+      </div>
         <a class="phone"
         id="1569621506082"
         href="/img/backgrounds/1569621506082.png"
